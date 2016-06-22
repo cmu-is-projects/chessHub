@@ -1,5 +1,7 @@
 # ChessHub
 
+Creating a hub for recording, displaying and discussing chess games online
+
 To start the ChessHub Phoenix app:
 
   * Install dependencies with `mix deps.get`
