@@ -24,7 +24,9 @@ defmodule ChessHubAPI.Router do
   scope "/api", ChessHubAPI do
     pipe_through :api
 
-    resources "/games", GameController
+    resources "/games", GameController do
+      get "/moves", GameController, :show_moves
+    end
 
     # scope "/v1", V1, as: :v1 do
     #   resources "/games", GameController

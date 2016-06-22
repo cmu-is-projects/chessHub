@@ -9,6 +9,10 @@ defmodule ChessHubAPI.GameView do
     %{data: render_one(game, ChessHubAPI.GameView, "game.json")}
   end
 
+  def render("show_moves.json", %{game: game}) do
+    %{data: render_one(game, ChessHubAPI.GameView, "move.json")}
+  end
+
   def render("game.json", %{game: game}) do
     %{id: game.id,
       white: game.white,
@@ -21,6 +25,6 @@ defmodule ChessHubAPI.GameView do
   end
 
   def render("move.json", %{game: game}) do
-    %{moves: game}
+    %{moves: game.moves}
   end
 end
