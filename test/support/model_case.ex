@@ -1,4 +1,4 @@
-defmodule ChessHubAPI.ModelCase do
+defmodule ChessHub.ModelCase do
   @moduledoc """
   This module defines the test case to be used by
   model tests.
@@ -16,18 +16,18 @@ defmodule ChessHubAPI.ModelCase do
 
   using do
     quote do
-      alias ChessHubAPI.Repo
+      alias ChessHub.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]
-      import ChessHubAPI.ModelCase
+      import ChessHub.ModelCase
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(ChessHubAPI.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(ChessHub.Repo, [])
     end
 
     :ok

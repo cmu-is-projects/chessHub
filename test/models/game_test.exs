@@ -1,7 +1,7 @@
-defmodule ChessHubAPI.GameTest do
-  use ChessHubAPI.ModelCase
+defmodule ChessHub.GameTest do
+  use ChessHub.ModelCase
 
-  alias ChessHubAPI.Game
+  alias ChessHub.Game
 
   @valid_attrs %{black: "some content", date: "2010-04-17", event: "some content", moves: "some content", round: 42, site: "some content", white: "some content"}
   @invalid_attrs %{}

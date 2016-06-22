@@ -1,7 +1,7 @@
-defmodule ChessHubAPI.GameHTMLControllerTest do
-  use ChessHubAPI.ConnCase
+defmodule ChessHub.GameHTMLControllerTest do
+  use ChessHub.ConnCase
 
-  alias ChessHubAPI.Game
+  alias ChessHub.Game
   @valid_attrs %{black: "some content", date: "2010-04-17", event: "some content", moves: "some content", round: 42, site: "some content", white: "some content"}
   @invalid_attrs %{}
 

@@ -1,3 +1,3 @@
-defmodule ChessHubAPI.PageViewTest do
-  use ChessHubAPI.ConnCase, async: true
+defmodule ChessHub.PageViewTest do
+  use ChessHub.ConnCase, async: true
 end

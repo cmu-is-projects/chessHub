@@ -1,7 +1,7 @@
-defmodule ChessHubAPI.GameController do
-  use ChessHubAPI.Web, :controller
+defmodule ChessHub.GameController do
+  use ChessHub.Web, :controller
 
-  alias ChessHubAPI.Game
+  alias ChessHub.Game
 
   plug :scrub_params, "game" when action in [:create, :update]
 
@@ -22,7 +22,7 @@ defmodule ChessHubAPI.GameController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(ChessHubAPI.ChangesetView, "error.json", changeset: changeset)
+        |> render(ChessHub.ChangesetView, "error.json", changeset: changeset)
     end
   end
 
@@ -48,7 +48,7 @@ defmodule ChessHubAPI.GameController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(ChessHubAPI.ChangesetView, "error.json", changeset: changeset)
+        |> render(ChessHub.ChangesetView, "error.json", changeset: changeset)
     end
   end
 

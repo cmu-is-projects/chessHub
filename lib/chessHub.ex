@@ -1,4 +1,4 @@
-defmodule ChessHubAPI do
+defmodule ChessHub do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -8,31 +8,23 @@ defmodule ChessHubAPI do
 
     children = [
       # Start the endpoint when the application starts
-      supervisor(ChessHubAPI.Endpoint, []),
+      supervisor(ChessHub.Endpoint, []),
       # Start the Ecto repository
-      supervisor(ChessHubAPI.Repo, []),
+      supervisor(ChessHub.Repo, []),
       # Here you could define other workers and supervisors as children
-      # worker(ChessHubAPI.Worker, [arg1, arg2, arg3]),
+      # worker(ChessHub.Worker, [arg1, arg2, arg3]),
     ]
-
-    # children = [
-    #   # Start the endpoint when the application starts
-    #   supervisor(ChessHubAPI.Endpoint, []),
-    #   # Start the Ecto repository
-    #   worker(ChessHubAPI.Repo, []),
-    #   worker(ChessHubAPI.NoDecodeRepo,[]),
-    # ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: ChessHubAPI.Supervisor]
+    opts = [strategy: :one_for_one, name: ChessHub.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    ChessHubAPI.Endpoint.config_change(changed, removed)
+    ChessHub.Endpoint.config_change(changed, removed)
     :ok
   end
 end

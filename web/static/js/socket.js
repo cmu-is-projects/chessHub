@@ -53,10 +53,51 @@ let socket = new Socket("/socket", {params: {token: window.userToken}})
 
 socket.connect()
 
-// Now that you are connected, you can join channels with a topic:
-let channel = socket.channel("topic:subtopic", {})
+
+// chat channel code modified from https://sheharyar.me/blog/simple-chat-phoenix-elixir/
+let channel = socket.channel("lobby", {});
+let list    = $('#message-list');
+let message = $('#message');
+let name    = $('#name');
+
+message.on('keypress', event => {
+  if (event.keyCode == 13 && message.val() != "") {
+    channel.push('new_message', { name: name.val(), message: message.val(), guid: guid, timestamp: Date.now() });
+    message.val('');
+  }
+});
+
+channel.on('new_message', payload => {
+  if (guid == payload.guid) {
+  	list.append(`<div><p align="right"><b>${payload.name || 'Anonymous'}:</b> ${payload.message}</p></div>`);
+  }
+  else {
+  	list.append(`<div><p><b>${payload.name || 'Anonymous'}:</b> ${payload.message}</p></div>`);
+  }
+  list.prop({scrollTop: list.prop("scrollHeight")});
+});
+
 channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
   .receive("error", resp => { console.log("Unable to join", resp) })
+  let guid = guid();
+
+// Now that you are connected, you can join channels with a topic:
+// let channel = socket.channel("topic:subtopic", {})
+// channel.join()
+//   .receive("ok", resp => { console.log("Joined successfully", resp) })
+//   .receive("error", resp => { console.log("Unable to join", resp) })
+
+
+// a simple "version 4" guid found here: http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
+}
 
 export default socket

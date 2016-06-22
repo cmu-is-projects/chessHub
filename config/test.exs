@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :chessHubAPI, ChessHubAPI.Endpoint,
+config :chessHub, ChessHub.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :chessHubAPI, ChessHubAPI.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :chessHubAPI, ChessHubAPI.Repo,
+config :chessHub, ChessHub.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "chesshubapi_test",
+  database: "chesshub_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

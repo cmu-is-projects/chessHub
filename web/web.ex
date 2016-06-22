@@ -1,12 +1,12 @@
-defmodule ChessHubAPI.Web do
+defmodule ChessHub.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use ChessHubAPI.Web, :controller
-      use ChessHubAPI.Web, :view
+      use ChessHub.Web, :controller
+      use ChessHub.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule ChessHubAPI.Web do
     quote do
       use Phoenix.Controller
 
-      alias ChessHubAPI.Repo
+      alias ChessHub.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import ChessHubAPI.Router.Helpers
-      import ChessHubAPI.Gettext
+      import ChessHub.Router.Helpers
+      import ChessHub.Gettext
     end
   end
 
@@ -49,9 +49,9 @@ defmodule ChessHubAPI.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import ChessHubAPI.Router.Helpers
-      import ChessHubAPI.ErrorHelpers
-      import ChessHubAPI.Gettext
+      import ChessHub.Router.Helpers
+      import ChessHub.ErrorHelpers
+      import ChessHub.Gettext
     end
   end
 
@@ -65,10 +65,10 @@ defmodule ChessHubAPI.Web do
     quote do
       use Phoenix.Channel
 
-      alias ChessHubAPI.Repo
+      alias ChessHub.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
-      import ChessHubAPI.Gettext
+      import ChessHub.Gettext
     end
   end
 

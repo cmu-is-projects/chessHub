@@ -1,5 +1,5 @@
-defmodule ChessHubAPI.PageController do
-  use ChessHubAPI.Web, :controller
+defmodule ChessHub.PageController do
+  use ChessHub.Web, :controller
 
   def index(conn, _params) do
     render conn, "index.html"

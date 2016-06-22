@@ -1,8 +1,8 @@
-defmodule ChessHubAPI.Mixfile do
+defmodule ChessHub.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :chessHubAPI,
+    [app: :chessHub,
      version: "0.0.1",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -17,7 +17,7 @@ defmodule ChessHubAPI.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {ChessHubAPI, []},
+    [mod: {ChessHub, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex]]
   end

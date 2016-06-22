@@ -1,3 +1,3 @@
-defmodule ChessHubAPI.LayoutView do
-  use ChessHubAPI.Web, :view
+defmodule ChessHub.LayoutView do
+  use ChessHub.Web, :view
 end

@@ -1,16 +1,16 @@
-defmodule ChessHubAPI.GameView do
-  use ChessHubAPI.Web, :view
+defmodule ChessHub.GameView do
+  use ChessHub.Web, :view
 
   def render("index.json", %{games: games}) do
-    %{data: render_many(games, ChessHubAPI.GameView, "game.json")}
+    %{data: render_many(games, ChessHub.GameView, "game.json")}
   end
 
   def render("show.json", %{game: game}) do
-    %{data: render_one(game, ChessHubAPI.GameView, "game.json")}
+    %{data: render_one(game, ChessHub.GameView, "game.json")}
   end
 
   def render("show_moves.json", %{game: game}) do
-    %{data: render_one(game, ChessHubAPI.GameView, "move.json")}
+    %{data: render_one(game, ChessHub.GameView, "move.json")}
   end
 
   def render("game.json", %{game: game}) do

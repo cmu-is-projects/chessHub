@@ -1,6 +1,6 @@
-# ChessHubAPI
+# ChessHub
 
-To start the ChessHubAPI Phoenix app:
+To start the ChessHub Phoenix app:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate the database with `mix ecto.create && mix ecto.migrate`

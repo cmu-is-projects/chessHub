@@ -6,12 +6,12 @@
 use Mix.Config
 
 # Configures the endpoint
-config :chessHubAPI, ChessHubAPI.Endpoint,
+config :chessHub, ChessHub.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "feNvs7ejHSSitDvbhb+rGDn5aYFawitsMIfc7OnsDcG7qJQ/3xKmVoiU+g/pC2KO",
   render_errors: [accepts: ~w(html json)],
-  pubsub: [name: ChessHubAPI.PubSub,
+  pubsub: [name: ChessHub.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

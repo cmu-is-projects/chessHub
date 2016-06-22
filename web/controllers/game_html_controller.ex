@@ -1,7 +1,7 @@
-defmodule ChessHubAPI.GameHTMLController do
-  use ChessHubAPI.Web, :controller
+defmodule ChessHub.GameHTMLController do
+  use ChessHub.Web, :controller
 
-  alias ChessHubAPI.Game
+  alias ChessHub.Game
 
   plug :scrub_params, "game" when action in [:create, :update]
 

@@ -1,9 +1,9 @@
 defmodule ListingGamesIntegrationTest do
   use ExUnit.Case, async: true
   use Plug.Test
-  alias ChessHubAPI.Router
-  alias ChessHubAPI.Game
-  alias ChessHubAPI.Repo
+  alias ChessHub.Router
+  alias ChessHub.Game
+  alias ChessHub.Repo
 
   @opts Router.init([])
   test 'listing games' do
@@ -29,7 +29,7 @@ end
 # defmodule ListingGamesIntegrationTest do
 #   use ExUnit.Case, async: true
 #   use Plug.Test
-#   alias ChessHubAPI.Router
+#   alias ChessHub.Router
 #
 #   @opts Router.init([])
 #   test 'listing games' do

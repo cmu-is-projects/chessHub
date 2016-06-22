@@ -1,5 +1,5 @@
-defmodule ChessHubAPI.PageControllerTest do
-  use ChessHubAPI.ConnCase
+defmodule ChessHub.PageControllerTest do
+  use ChessHub.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

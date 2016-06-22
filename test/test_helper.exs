@@ -1,6 +1,5 @@
 ExUnit.start
 
-Mix.Task.run "ecto.create", ~w(-r ChessHubAPI.Repo --quiet)
-Mix.Task.run "ecto.migrate", ~w(-r ChessHubAPI.Repo --quiet)
-Ecto.Adapters.SQL.begin_test_transaction(ChessHubAPI.Repo)
-
+Mix.Task.run "ecto.create", ~w(-r ChessHub.Repo --quiet)
+Mix.Task.run "ecto.migrate", ~w(-r ChessHub.Repo --quiet)
+Ecto.Adapters.SQL.begin_test_transaction(ChessHub.Repo)

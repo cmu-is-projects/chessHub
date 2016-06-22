@@ -1,5 +1,5 @@
-defmodule ChessHubAPI.Game do
-  use ChessHubAPI.Web, :model
+defmodule ChessHub.Game do
+  use ChessHub.Web, :model
 
   schema "games" do
     field :white, :string
@@ -27,7 +27,7 @@ defmodule ChessHubAPI.Game do
     |> cast(params, @required_fields, @optional_fields)
   end
 
-  defimpl Poison.Encoder, for: ChessHubAPI.Game do
+  defimpl Poison.Encoder, for: ChessHub.Game do
     def encode(game, _options) do
       game
       |> Map.from_struct

@@ -1,4 +1,4 @@
-defmodule ChessHubAPI.ErrorHelpers do
+defmodule ChessHub.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -26,10 +26,10 @@ defmodule ChessHubAPI.ErrorHelpers do
     #
     #     dngettext "errors", "1 file", "%{count} files", count
     #
-    Gettext.dngettext(ChessHubAPI.Gettext, "errors", msg, msg, opts[:count], opts)
+    Gettext.dngettext(ChessHub.Gettext, "errors", msg, msg, opts[:count], opts)
   end
 
   def translate_error(msg) do
-    Gettext.dgettext(ChessHubAPI.Gettext, "errors", msg)
+    Gettext.dgettext(ChessHub.Gettext, "errors", msg)
   end
 end

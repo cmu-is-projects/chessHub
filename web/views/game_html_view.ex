@@ -1,3 +1,3 @@
-defmodule ChessHubAPI.GameHTMLView do
-  use ChessHubAPI.Web, :view
+defmodule ChessHub.GameHTMLView do
+  use ChessHub.Web, :view
 end

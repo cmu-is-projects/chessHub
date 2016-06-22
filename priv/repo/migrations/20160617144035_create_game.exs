@@ -1,4 +1,4 @@
-defmodule ChessHubAPI.Repo.Migrations.CreateGame do
+defmodule ChessHub.Repo.Migrations.CreateGame do
   use Ecto.Migration
 
   def change do
