@@ -31,7 +31,9 @@
 
   <div class="form-group">
     <%= label f, :date, class: "control-label" %>
-    <%= text_input f, :date, class: "form-control" %>
+    <!-- <%= text_input f, :date, class: "form-control" %> -->
+    <br />
+    <%= date_select f, :date, class: "form-control" %>
     <%= error_tag f, :date %>
   </div>
 
