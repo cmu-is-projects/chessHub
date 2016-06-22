@@ -17,10 +17,17 @@ defmodule ChessHubAPI.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/games", GameHTMLController
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ChessHubAPI do
-  #   pipe_through :api
-  # end
+  scope "/api", ChessHubAPI do
+    pipe_through :api
+
+    resources "/games", GameController
+
+    # scope "/v1", V1, as: :v1 do
+    #   resources "/games", GameController
+    # end
+  end
 end

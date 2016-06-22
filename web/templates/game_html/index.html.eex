@@ -1,0 +1,38 @@
+<h2>Listing games</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>White</th>
+      <th>Black</th>
+      <th>Event</th>
+      <th>Site</th>
+      <th>Date</th>
+      <th>Round</th>
+      <th>Moves</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for game <- @games do %>
+    <tr>
+      <td><%= game.white %></td>
+      <td><%= game.black %></td>
+      <td><%= game.event %></td>
+      <td><%= game.site %></td>
+      <td><%= game.date %></td>
+      <td><%= game.round %></td>
+      <td><%= game.moves %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: game_html_path(@conn, :show, game), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: game_html_path(@conn, :edit, game), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: game_html_path(@conn, :delete, game), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New game", to: game_html_path(@conn, :new) %>

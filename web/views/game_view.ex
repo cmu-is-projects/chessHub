@@ -19,4 +19,8 @@ defmodule ChessHubAPI.GameView do
       round: game.round,
       moves: game.moves}
   end
+
+  def render("move.json", %{game: game}) do
+    %{moves: game}
+  end
 end

@@ -40,3 +40,11 @@ config :chessHubAPI, ChessHubAPI.Repo,
   database: "chesshubapi_dev",
   hostname: "localhost",
   pool_size: 10
+
+# config :chessHubAPI, ChessHubAPI.NoDecodeRepo,
+#   adapter: Ecto.Adapters.Postgres,
+#   username: "postgres",
+#   password: "postgres",
+#   database: "chesshubapi_dev",
+#   hostname: "localhost",
+#   extensions: [{Extensions.JsonNoDecode, library: Poison}]

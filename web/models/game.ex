@@ -26,4 +26,13 @@ defmodule ChessHubAPI.Game do
     model
     |> cast(params, @required_fields, @optional_fields)
   end
+
+  defimpl Poison.Encoder, for: ChessHubAPI.Game do
+    def encode(game, _options) do
+      game
+      |> Map.from_struct
+      |> Map.drop([:__meta__, :__struct__])
+      |> Poison.encode!
+    end
+  end
 end

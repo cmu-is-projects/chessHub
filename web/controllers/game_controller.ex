@@ -28,6 +28,8 @@ defmodule ChessHubAPI.GameController do
 
   def show(conn, %{"id" => id}) do
     game = Repo.get!(Game, id)
+    gameID = elem(Integer.parse(id), 0)
+    query = elem(Ecto.Adapters.SQL.query(Repo, "SELECT row_to_json(move) FROM (SELECT moves FROM games WHERE id=$1) AS move", [gameID]),1)
     render(conn, "show.json", game: game)
   end
 

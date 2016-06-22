@@ -15,6 +15,14 @@ defmodule ChessHubAPI do
       # worker(ChessHubAPI.Worker, [arg1, arg2, arg3]),
     ]
 
+    # children = [
+    #   # Start the endpoint when the application starts
+    #   supervisor(ChessHubAPI.Endpoint, []),
+    #   # Start the Ecto repository
+    #   worker(ChessHubAPI.Repo, []),
+    #   worker(ChessHubAPI.NoDecodeRepo,[]),
+    # ]
+
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: ChessHubAPI.Supervisor]

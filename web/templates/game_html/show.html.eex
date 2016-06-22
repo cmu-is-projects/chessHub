@@ -1,0 +1,43 @@
+<h2>Show game</h2>
+
+<ul>
+
+  <li>
+    <strong>White Player:</strong>
+    <%= @game.white %>
+  </li>
+
+  <li>
+    <strong>Black player:</strong>
+    <%= @game.black %>
+  </li>
+
+  <li>
+    <strong>Event:</strong>
+    <%= @game.event %>
+  </li>
+
+  <li>
+    <strong>Site:</strong>
+    <%= @game.site %>
+  </li>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @game.date %>
+  </li>
+
+  <li>
+    <strong>Round:</strong>
+    <%= @game.round %>
+  </li>
+
+  <li>
+    <strong>Moves:</strong>
+    <%= @game.moves %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: game_html_path(@conn, :edit, @game) %>
+<%= link "Back", to: game_html_path(@conn, :index) %>
