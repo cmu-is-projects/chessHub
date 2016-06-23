@@ -5,15 +5,27 @@
   <p><a href="<%= game_path(@conn, :index) %>"> <%= game_url(@conn, :index) %> </a></p>
 </div>
 
-<div id='message-list' class='row'>
-</div>
-
-<div class='row form-group'>
-  <div class='col-md-3'>
-    <input type='text' id='name' class='form-control' placeholder='Name' />
+<div class="game-container">
+  <div class="board-container">
+    <div id="board1" style="width: 100%"></div>
+    <div class="buttons">
+      <input type="button" value="Prev"></input>
+      <input type="button" value="Next"></input>
+    </div>
   </div>
-  <div class='col-md-9'>
-    <input type='text' id='message' class='form-control' placeholder='Message' />
+
+  <div style="width: 30%; display: inline-block; margin-left: 5%;">
+    <div id='message-list' class='row'>
+    </div>
+
+    <div class='row form-group'>
+      <div class='col-md-12'>
+        <input type='text' id='name' class='form-control' placeholder='Name' />
+      </div>
+      <div class='col-md-12'>
+        <input type='text' id='message' class='form-control' placeholder='Message' />
+      </div>
+    </div>
   </div>
 </div>
 
@@ -21,7 +33,6 @@
 <div class="row marketing">
   <div class="col-lg-6">
   </div>
-
   <div class="col-lg-6">
   </div>
 </div> -->
