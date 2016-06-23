@@ -28,6 +28,10 @@ defmodule ChessHub.Game do
     |> validate_required([:white, :black, :event, :site, :date, :round, :moves])
   end
 
+  def get_moves_array() do
+    String.split(:moves,",")
+  end
+
   defimpl Poison.Encoder, for: ChessHub.Game do
     def encode(game, _options) do
       game
