@@ -5,6 +5,10 @@ defmodule ListingGamesIntegrationTest do
   alias ChessHub.Game
   alias ChessHub.Repo
 
+  setup do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ChessHub.Repo)
+  end
+
   @opts Router.init([])
   test 'listing games' do
     %Game{

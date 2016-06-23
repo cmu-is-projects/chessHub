@@ -5,6 +5,9 @@
 # is restricted to this project.
 use Mix.Config
 
+# Ecto 2.0
+config :chessHub, ecto_repos: [ChessHub.Repo]
+
 # Configures the endpoint
 config :chessHub, ChessHub.Endpoint,
   url: [host: "localhost"],
