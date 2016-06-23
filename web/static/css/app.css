@@ -10,12 +10,37 @@ body, form, ul, table {
   margin-bottom: 20px;
 }
 
+.game-container{
+  margin-bottom: 40px;
+}
+
+.board-container{
+  width: 60%;
+  display: inline-block;
+  vertical-align:top;
+}
+
+.buttons{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button{
+  margin: auto;
+  width: 40%;
+}
+
 /* Phoenix flash messages */
 .alert:empty { display: none; }
 
 /* Phoenix inline forms in links and buttons */
 form.link, form.button {
   display: inline;
+}
+
+.form-control {
+  margin-bottom: 10px
 }
 
 /* Custom page header */
@@ -79,8 +104,9 @@ form.link, form.button {
 
 #message-list {
   border: 1px solid #777;
-  height: 400px;
+  height: 300px;
   padding: 10px;
   overflow: scroll;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  vertical-align: top;
 }
